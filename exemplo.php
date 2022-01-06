@@ -10,7 +10,7 @@ class Produto{
     }
 
     public function getDetalhes(){
-        return "O produto {$this->descricao} custa {$this->preco} reais";
+        return "Memoria RAM - {$this->descricao} custa apenas - {$this->preco} reais";
     }
 
     public function setDescricao($valor){
@@ -30,9 +30,9 @@ class Produto{
     }
 }
 
-$gil = new Produto('Livro', 50);
+$gil = new Produto('1333', 50);
 //$gil->setdescricao('Livro');
 //$gil->setpreco(50);
 
-var_dump($gil);
-//echo $gil->getDetalhes();
+//var_dump($gil);
+echo $gil->getDetalhes();

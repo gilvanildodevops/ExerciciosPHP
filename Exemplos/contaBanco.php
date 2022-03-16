@@ -12,12 +12,12 @@ class Conta{
     }
 
     public function getDetalhes(){
-        return "Agencia: {$this->agencia} /|/ Conta: {$this->conta} /|/ Saldo: {$this->saldo}<br />";
+        return "<h3>Agencia: {$this->agencia} /|/ Conta: {$this->conta} /|/ Saldo: {$this->saldo}<br /></h3>";
     }
 
     public function depositar($valor){
         $this->saldo += $valor;
-        echo "Depósito de: {$valor} /|/ Saldo atual é de: {$this->saldo}<br />";
+        echo "<h2>Depósito de: R$ {$valor} /|/ Saldo atual é de: R$ {$this->saldo}<br /></h2>";
     }
 }
 
@@ -25,9 +25,9 @@ class Poupanca extends Conta{
     public function saque($valor){
         if($this->saldo >= $valor):
             $this->saldo -= $valor;
-            echo "Saque de: {$valor} /|/ Saldo atual é de: {$this->saldo}<br />";
+            echo "<h3>Saque de: R$ {$valor} /|/ Saldo atual é de: R$ {$this->saldo}<br /></h3>";
         else:
-            echo "Saque não autorizado de {$valor} /|/ Saldo atual: {$this->saldo}<br />";
+            echo "<h3>Saque não autorizado de R$ {$valor} /|/ Saldo atual: R$ {$this->saldo}<br /></h3";
         endif;
     }
 }
@@ -44,11 +44,11 @@ class Corrente extends Conta{
     public function saque($valor){
         if(($this->saldo + $this->limite) >= $valor):
             $this->saldo -= $valor;
-            echo "Saque de: {$valor} /|/ Saldo atual é de: {$this->saldo}<br />";
+            echo "<h3>Saque de: R$ {$valor} /|/ Saldo atual é de: R$ {$this->saldo}<br /></h3>";
         else:
-            echo "Saque não autorizado de {$valor} /|/ 
-                Saldo atual: {$this->saldo} /|/ 
-                Limite em Contade de: {$this->limite}<br />";
+            echo "<h3>Saque não autorizado de R$ {$valor} /|/ 
+                Saldo atual: R$ {$this->saldo} /|/ 
+                Limite em Contade de: R$ {$this->limite}<br /></h3>";
         endif;
     }
 }

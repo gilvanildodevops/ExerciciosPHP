@@ -30,12 +30,13 @@ class Produto{
 
     public function getDetalhes(){
         return "Criação de Backup na {$this->descricao} 
-                custa apenas {$this->preco} reais. Fabricante: {$this->fabricante->getNome()}";
+                custa apenas<b><u> {$this->preco} reais.</u></b> 
+                <br><hr>Fabricante: {$this->fabricante->getNome()}";
     }
 
 }
 
-$fab = new Fabricante('TecnoGil - MultiCloud');
+$fab = new Fabricante('<b>TecnoGil - MultiCloud</b>');
 $gil = new Produto('Nuvem - Cloud', 350, $fab);
 
 //var_dump($gil);
